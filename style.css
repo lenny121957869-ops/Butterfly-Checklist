@@ -14,17 +14,20 @@ body{
     background-color:#93C572;
 }
 
-.container{ 
-width:100%;
-height: 100vh;
-background-color:#e8f4ea;
-padding:20px;
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding: 20px;
 }
 .todo-app{
     width:100%;
     max-width:540px;
-    background-color:#fff;
-    margin:0 auto;
+    background-color:#e8f4ea;
+    margin:0;
     padding: 40px 30px 70px;
     border-radius:30px;
 }
@@ -51,7 +54,8 @@ button{
     border:none;
     outline:none;
     background-color:#ffc067;
-    color:#ffffff;
+    color:#000;
+    border: 3px solid #fff;
     font-size: 16px;
     padding:16px 50px;
     cursor:pointer;
