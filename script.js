@@ -37,5 +37,7 @@ function countListItems(){
 }
 
 function showButterflyStage(){
-    
+    if(countListItems() === 1 || countListItems() % 4 === 1){
+        document.body.style.backgroundImage= butterflyLifeCycle[0];
+    } 
 }
