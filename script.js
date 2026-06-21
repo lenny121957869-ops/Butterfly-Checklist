@@ -30,6 +30,13 @@ const butterflyLifeCycle=[
     "url(assets/butterfly.png)"
 ];
 
+function countListItems(userInput){
+    if(!userInput){
+        return 0;
+    }
+    return userInput.length;
+}
+
 function showButterflyStage(){
     
 }
