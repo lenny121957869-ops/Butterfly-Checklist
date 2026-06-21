@@ -12,6 +12,10 @@ body{
     align-items:center;
     padding:0;
     background-image:url("assets/garden.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position:bottom;
 }
 
 .container {
