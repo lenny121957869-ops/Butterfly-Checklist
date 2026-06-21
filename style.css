@@ -90,7 +90,6 @@ ul li.checked{
 ul li.checked::before{
     background-image:url("assets/flowerbloomed.png");
 }
-
 ul li span{
     position:absolute;
     right:0;
