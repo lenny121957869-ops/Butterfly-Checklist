@@ -22,3 +22,10 @@ listContainer.addEventListener("click", function(e){
         e.target.parentElement.remove();
     }
 }, false);
+
+const butterflyLifeCycle=[
+    "url(assets/egg.png)",
+    "url(assets/caterpillar.png)",
+    "url(assets/chrysalis.png)",
+    "url(assets/butterfly.png)"
+];
