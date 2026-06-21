@@ -11,7 +11,7 @@ body{
     justify-content: center;
     align-items:center;
     padding:0;
-    background-color:#93C572;
+    background-image:url("assets/garden.png");
 }
 
 .container {
@@ -53,9 +53,8 @@ input{
 button{
     border:none;
     outline:none;
-    background-color:#ffc067;
-    color:#000;
-    border: 3px solid #fff;
+    background-color:#93C572;
+    color:#fff;
     font-size: 16px;
     padding:16px 50px;
     cursor:pointer;
