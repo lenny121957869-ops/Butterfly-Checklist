@@ -87,5 +87,5 @@ ul li: :.checked{
     text-decoration:line-through;
 }
 ul li:.checked: :before{
-    background-image:url(asssets/flowerbloomed.png);
+    background-image:url(assets/flowerbloomed.png);
 }
