@@ -76,16 +76,17 @@ ul li::before{
     height:28px;
     width:28px;
     border-radius: 50%;
-    background-image:<img src="assets/flowerbud.png">
+    background-image:url("assets/flowerbud.png");
     background-size: cover;
     background-position: center;
     top:12px;
     left:8px;
 }
-ul li: :.checked{
+
+ul li.checked{
     color:#555;
     text-decoration:line-through;
 }
-ul li:.checked: :before{
-    background-image:<img src="assets/flowerbloomed.png">
+ul li.checked::before{
+    background-image:url("assets/flowerbloomed.png");
 }
