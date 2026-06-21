@@ -76,8 +76,8 @@ ul li{
 ul li::before{
     content:'';
     position: absolute;
-    height:28px;
-    width:28px;
+    height:45px;
+    width:45px;
     border-radius: 50%;
     background-image:url("assets/flowerbud.png");
     background-size: cover;
