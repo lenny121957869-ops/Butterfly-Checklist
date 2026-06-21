@@ -29,3 +29,7 @@ const butterflyLifeCycle=[
     "url(assets/chrysalis.png)",
     "url(assets/butterfly.png)"
 ];
+
+function showButterflyStage(){
+    
+}
