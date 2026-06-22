@@ -36,8 +36,14 @@ function countListItems(){
     return items.length;
 }
 
+function countCheckedItems(){
+    if (!listContainer) return 0;
+    const checkedItems= listContainer.querySelectorAll('li.checked');
+    return checkedItems.length;
+}
+
 function showButterflyStage(){
-    if(countListItems() === 1 || countListItems() % 4 === 1){
+    if(countListItems()-countCheckedItems() === 1 || countCheckedItems() % 4 === 1){
         document.body.style.backgroundImage= butterflyLifeCycle[0];
     } 
 }
