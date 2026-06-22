@@ -7,7 +7,7 @@ const butterflyLifeCycle=[
     "assets/butterfly.png"
 ];
 
-const selectedButterflyImageSRC = butterflyLifeCycle[updateButterflyCycle()];
+const selectedButterflyImageSRC = butterflyLifeCycle[0];
 const container = document.getElementById("butterfly-image-container");
 const imgElement = document.createElement("img");
 imgElement.src = selectedButterflyImageSRC;
@@ -22,7 +22,7 @@ function addTask(){
         let li= document.createElement("li");
         li.innerHTML= inputBox.value;
         listContainer.appendChild(li);
-        cupdateButterflyCycle();
+    
         let span = document.createElement("span");
         span.innerHTML="\u00d7";
         li.appendChild(span);
@@ -33,18 +33,8 @@ function addTask(){
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
-       updateButterflyCycle();
+
     }else if(e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
     }
     });
-
-function countItems(){
-    const count = listContainer.querySelectorAll("li").length;
-    console.log("Number of items:" + count);
-    return count;
-}
-
-function updateButterflyCycle(){}
-const stage = countItems();
-imgElement.src = butterflyLifeCycle[stage];
