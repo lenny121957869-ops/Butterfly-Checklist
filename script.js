@@ -46,4 +46,13 @@ function showButterflyStage(){
     if(countListItems()-countCheckedItems() === 1 || countCheckedItems() % 4 === 1){
         document.body.style.backgroundImage= butterflyLifeCycle[0];
     } 
+    else if(countListItems()-countCheckedItems() === 2 || countCheckedItems() % 4 === 2){
+        document.body.style.backgroundImage= butterflyLifeCycle[1];
+    }
+    else if(countListItems()-countCheckedItems() === 3 || countCheckedItems() % 4 === 3){
+        document.body.style.backgroundImage=butterflyLifeCycle[2];
+    }
+    else if(countListItems()-countCheckedItems() === 4 || countCheckedItems() % 4 === 0){
+        document.body.style.backgroundImage=butterflyLifeCycle[3];
+    }
 }
