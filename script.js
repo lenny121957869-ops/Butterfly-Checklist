@@ -1,5 +1,10 @@
 const inputBox= document.getElementById("input-box");
 const listContainer= document.getElementById("list-container");
+const selectedButterflyImageSRC= ButterflyLifeCycle[0];
+const container= document.getElementById("butterfly-image-contatiner");
+const imgElement= document.createElement("img");
+imgELement.src= selectedButterlfyImageSRC;
+container.appendChild(imgElement);
 
 function addTask(){ 
     if (inputBox.value === ''){
@@ -30,6 +35,7 @@ const butterflyLifeCycle=[
     "url(assets/butterfly.png)"
 ];
 
+/*
 function countListItems(){
     if (!listContainer) return 0;
     const items = listContainer.getElementsByTagName('li');
