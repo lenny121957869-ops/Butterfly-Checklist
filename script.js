@@ -42,7 +42,7 @@ function countCheckedItems(){
     return checkedItems.length;
 }
 
-function showButterflyStage(){
+function showButterflyStage4(){
     if(countListItems()-countCheckedItems() === 1 ){
         document.body.style.backgroundImage= butterflyLifeCycle[0];
     } 
@@ -60,5 +60,13 @@ function showButterflyStage(){
 function greaterThanFour(){
     if(countListItems()>4){
       return Math.trunc(countListItems()/4);
+    }
+}
+
+function showButterflyStageGreaterThan4(){
+    for(var i=0; i<countListItems();i++){
+        for(var i=0; i<greaterThanFour(); i++){
+            showButterflyStage4();
+        }
     }
 }
