@@ -1,10 +1,19 @@
 const inputBox= document.getElementById("input-box");
 const listContainer= document.getElementById("list-container");
-const selectedButterflyImageSRC= ButterflyLifeCycle[0];
-const container= document.getElementById("butterfly-image-contatiner");
-const imgElement= document.createElement("img");
-imgELement.src= selectedButterlfyImageSRC;
-container.appendChild(imgElement);
+const butterflyLifeCycle=[
+    "assets/egg.png",
+    "assets/caterpillar.png",
+    "assets/chrysalis.png",
+    "assets/butterfly.png"
+];
+
+const selectedButterflyImageSRC = butterflyLifeCycle[0];
+const container = document.getElementById("butterfly-image-container");
+const imgElement = document.createElement("img");
+imgElement.src = selectedButterflyImageSRC;
+if (container) {
+    container.appendChild(imgElement);
+}
 
 function addTask(){ 
     if (inputBox.value === ''){
@@ -28,12 +37,6 @@ listContainer.addEventListener("click", function(e){
     }
 }, false);
 
-const butterflyLifeCycle=[
-    "url(assets/egg.png)",
-    "url(assets/caterpillar.png)",
-    "url(assets/chrysalis.png)",
-    "url(assets/butterfly.png)"
-];
 
 /*
 function countListItems(){
