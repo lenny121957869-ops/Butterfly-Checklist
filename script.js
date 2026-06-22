@@ -1,7 +1,7 @@
 const inputBox= document.getElementById("input-box");
 const listContainer= document.getElementById("list-container");
 
-function addTask(){
+function addTask(){ 
     if (inputBox.value === ''){
         alert("you must add a task to begin!");
     }else{
@@ -54,5 +54,11 @@ function showButterflyStage(){
     }
     else if(countListItems()-countCheckedItems() === 4 ){
         document.body.style.backgroundImage=butterflyLifeCycle[3];
+    }
+}
+
+function greaterThanFour(){
+    if(countListItems()>4){
+      return Math.trunc(countListItems()/4);
     }
 }
