@@ -11,6 +11,8 @@ const selectedButterflyImageSRC = butterflyLifeCycle[0];
 const container = document.getElementById("butterfly-image-container");
 const imgElement = document.createElement("img");
 imgElement.src = selectedButterflyImageSRC;
+
+
 if (container) {
     container.appendChild(imgElement);
 }
