@@ -37,6 +37,11 @@ listContainer.addEventListener("click", function(e){
     }else if(e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
     }
-}, false);
+    countItems();
+    });
 
-
+function countItems(){
+    const count = listContainer.querySelectorAll("li").length;
+    console.log("Number of items:" + count);
+    return listContainer.querySelectorAll("li").length;
+}
