@@ -108,3 +108,16 @@ ul li span{
 ul li span:hover{
     background:#e7cbff;
 }
+#butterfly-image-container{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:9999;
+
+}
+
+#butterfly-image-container img{
+    width: 120px;
+    height: 120px;
+    display: block;
+}
