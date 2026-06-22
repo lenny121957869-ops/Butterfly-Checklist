@@ -7,7 +7,7 @@ const butterflyLifeCycle=[
     "assets/butterfly.png"
 ];
 
-const selectedButterflyImageSRC = butterflyLifeCycle[2];
+const selectedButterflyImageSRC = butterflyLifeCycle[countItems()];
 const container = document.getElementById("butterfly-image-container");
 const imgElement = document.createElement("img");
 imgElement.src = selectedButterflyImageSRC;
@@ -22,10 +22,10 @@ function addTask(){
         let li= document.createElement("li");
         li.innerHTML= inputBox.value;
         listContainer.appendChild(li);
+        countItems();
         let span = document.createElement("span");
         span.innerHTML="\u00d7";
         li.appendChild(span);
-        showButterflyStage4();
     }
     inputBox.value = "";
 }
@@ -37,11 +37,11 @@ listContainer.addEventListener("click", function(e){
     }else if(e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
     }
-    countItems();
     });
 
 function countItems(){
     const count = listContainer.querySelectorAll("li").length;
     console.log("Number of items:" + count);
-    return listContainer.querySelectorAll("li").length;
+    return count;
 }
+
