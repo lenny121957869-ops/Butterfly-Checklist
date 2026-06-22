@@ -7,7 +7,7 @@ const butterflyLifeCycle=[
     "assets/butterfly.png"
 ];
 
-const selectedButterflyImageSRC = butterflyLifeCycle[0];
+const selectedButterflyImageSRC = butterflyLifeCycle[showButterflyStage4()];
 const container = document.getElementById("butterfly-image-container");
 const imgElement = document.createElement("img");
 imgElement.src = selectedButterflyImageSRC;
@@ -40,3 +40,49 @@ listContainer.addEventListener("click", function(e){
 }, false);
 
 
+function countListItems(){
+    if (!listContainer) return 0;
+    const items = listContainer.getElementsByTagName('li');
+    return items.length;
+}
+
+
+function countCheckedItems(){
+    if (!listContainer) return 0;
+    const checkedItems= listContainer.querySelectorAll('li.checked');
+    return checkedItems.length;
+}
+
+
+function showButterflyStage4(){
+    if(countListItems()-countCheckedItems() === 1 ){
+        document.body.style.backgroundImage= butterflyLifeCycle[0];
+    }
+    else if(countListItems()-countCheckedItems() === 2 ){
+        document.body.style.backgroundImage= butterflyLifeCycle[1];
+    }
+    else if(countListItems()-countCheckedItems() === 3 ){
+        document.body.style.backgroundImage=butterflyLifeCycle[2];
+    }
+    else if(countListItems()-countCheckedItems() === 4 ){
+        document.body.style.backgroundImage=butterflyLifeCycle[3];
+    }else{
+        showButterflyStageGreaterThan4();
+    }
+}
+
+
+function greaterThanFour(){
+    if(countListItems()>4){
+      return Math.trunc(countListItems()/4);
+    }
+}
+
+
+function showButterflyStageGreaterThan4(){
+    for(var i=0; i<countCheckedItems();i++){
+        for(var i=0; i<greaterThanFour(); i++){
+            showButterflyStage4();
+        }
+    }
+}
