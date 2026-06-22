@@ -7,7 +7,7 @@ const butterflyLifeCycle=[
     "assets/butterfly.png"
 ];
 
-const selectedButterflyImageSRC = butterflyLifeCycle[0];
+const selectedButterflyImageSRC = butterflyLifeCycle[2];
 const container = document.getElementById("butterfly-image-container");
 const imgElement = document.createElement("img");
 imgElement.src = selectedButterflyImageSRC;
