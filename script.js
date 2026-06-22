@@ -88,17 +88,4 @@ function showButterflyStage4(){
 }
 
 
-function greaterThanFour(){
-    if(countListItems()>4){
-      return Math.trunc(countListItems()/4);
-    }
-}
 
-
-function showButterflyStageGreaterThan4(){
-    for(var i=0; i<countCheckedItems();i++){
-        for(var j=0; j<greaterThanFour(); j++){
-            showButterflyStage4();
-        }
-    }
-}
