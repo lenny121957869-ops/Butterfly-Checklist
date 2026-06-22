@@ -64,7 +64,7 @@ function greaterThanFour(){
 }
 
 function showButterflyStageGreaterThan4(){
-    for(var i=0; i<countListItems();i++){
+    for(var i=0; i<countCheckedItems();i++){
         for(var i=0; i<greaterThanFour(); i++){
             showButterflyStage4();
         }
