@@ -7,14 +7,20 @@ const butterflyLifeCycle=[
     "assets/butterfly.png"
 ];
 
-const selectedButterflyImageSRC = butterflyLifeCycle[showButterflyStage4()];
-const container = document.getElementById("butterfly-image-container");
-const imgElement = document.createElement("img");
-imgElement.src = selectedButterflyImageSRC;
+window.addEventListener("load", function() {
+    setupButterflyImage();
+});
 
-
-if (container) {
-    container.appendChild(imgElement);
+function setupButterflyImage() {
+    const stage = showButterflyStage4();
+    const selectedButterflyImageSRC = butterflyLifeCycle[stage];
+    const container = document.getElementById("butterfly-image-container");
+    const imgElement = document.createElement("img");
+    imgElement.src = selectedButterflyImageSRC;
+    
+    if (container) {
+        container.appendChild(imgElement);
+    }
 }
 
 function addTask(){ 
@@ -27,6 +33,7 @@ function addTask(){
         let span = document.createElement("span");
         span.innerHTML="\u00d7";
         li.appendChild(span);
+        showButterflyStage4();
     }
     inputBox.value = "";
 }
@@ -34,8 +41,10 @@ function addTask(){
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
+        showButterflyStage4();
     }else if(e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
+        showButterflyStage4();
     }
 }, false);
 
@@ -55,20 +64,29 @@ function countCheckedItems(){
 
 
 function showButterflyStage4(){
-    if(countListItems()-countCheckedItems() === 1 ){
-        document.body.style.backgroundImage= butterflyLifeCycle[0];
+    const remaining = countListItems() - countCheckedItems();
+    let stage = 0;
+    
+    if(remaining === 1 ){
+        stage = 0;
+        document.body.style.backgroundImage= "url('" + butterflyLifeCycle[0] + "')";
     }
-    else if(countListItems()-countCheckedItems() === 2 ){
-        document.body.style.backgroundImage= butterflyLifeCycle[1];
+    else if(remaining === 2 ){
+        stage = 1;
+        document.body.style.backgroundImage= "url('" + butterflyLifeCycle[1] + "')";
     }
-    else if(countListItems()-countCheckedItems() === 3 ){
-        document.body.style.backgroundImage=butterflyLifeCycle[2];
+    else if(remaining === 3 ){
+        stage = 2;
+        document.body.style.backgroundImage= "url('" + butterflyLifeCycle[2] + "')";
     }
-    else if(countListItems()-countCheckedItems() === 4 ){
-        document.body.style.backgroundImage=butterflyLifeCycle[3];
+    else if(remaining === 4 ){
+        stage = 3;
+        document.body.style.backgroundImage= "url('" + butterflyLifeCycle[3] + "')";
     }else{
+        stage = 3;
         showButterflyStageGreaterThan4();
     }
+    return stage;
 }
 
 
@@ -81,7 +99,7 @@ function greaterThanFour(){
 
 function showButterflyStageGreaterThan4(){
     for(var i=0; i<countCheckedItems();i++){
-        for(var i=0; i<greaterThanFour(); i++){
+        for(var j=0; j<greaterThanFour(); j++){
             showButterflyStage4();
         }
     }
