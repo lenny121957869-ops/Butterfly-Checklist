@@ -36,7 +36,6 @@ listContainer.addEventListener("click", function(e){
         showButterflyStage4();
     }else if(e.target.tagName === "SPAN"){
         e.target.parentElement.remove();
-        showButterflyStage4();
     }
 }, false);
 
